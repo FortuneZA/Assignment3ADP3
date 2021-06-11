@@ -14,5 +14,14 @@ public class Builder {
 
         System.out.println(university);
         System.out.println(faculty);
+
+        //student and test method
+
+        Student student = new Student.Builder().setStudentNumber("21832556457")
+                .setFirstName("Athi")
+                .setLastName("Fukama")
+                .setStudentEmail("athif@gmail.com")
+                .setCourseID("362S")
+                .build();
     }
 }
