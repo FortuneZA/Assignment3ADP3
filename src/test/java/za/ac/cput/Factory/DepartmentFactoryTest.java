@@ -2,7 +2,7 @@ package za.ac.cput.Factory;
 
 
 /* DepartmentFactoryTest.java
-   Test cases for Lecturer
+   Test cases for Department
    Author: Sergio Fisher - 217203248
    Date: 10 June 2021
  */
