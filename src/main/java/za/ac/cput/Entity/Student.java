@@ -12,6 +12,7 @@ public class Student {
     private String lastName;
     private String studentEmail;
     private String courseID;
+    private String surname;
 
     private Student(Builder builder){
         this.studentNumber = builder.studentNumber;
