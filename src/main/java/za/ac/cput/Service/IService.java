@@ -1,10 +1,12 @@
-package za.ac.cput.Repository;
+package za.ac.cput.Service;
 
-import za.ac.cput.Entity.University;
-
-public interface IRepository<T, ID>{
+public interface IService <T, ID> {
     public T create(T t);
+
     public T read(ID id);
+
     public T update(T t);
+
     public boolean delete(ID id);
+
 }

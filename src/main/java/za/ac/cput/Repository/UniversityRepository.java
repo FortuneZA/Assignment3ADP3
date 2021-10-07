@@ -30,8 +30,8 @@ public class UniversityRepository implements IUniversityRepository{
     }
 
     @Override
-    public University delete(String s) {
-        return null;
+    public boolean delete(String s) {
+        return false;
     }
 
     @Override
