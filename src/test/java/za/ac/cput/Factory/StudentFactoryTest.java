@@ -29,7 +29,6 @@ class StudentFactoryTest {
 
     }
 
-
     @BeforeEach
     void setUp() {
         Student student1 = StudentFactory.createStudent("Athi", "Fukama", "athif@gmail.com", "547S");

@@ -17,7 +17,7 @@ public class Builder {
 
         //student and test method
 
-        Student student = new Student.Builder().setStudentNumber("21832556457")
+        Student student = new Student.Builder().setStudentId("21832556457")
                 .setFirstName("Athi")
                 .setLastName("Fukama")
                 .setStudentEmail("athif@gmail.com")
