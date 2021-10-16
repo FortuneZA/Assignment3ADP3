@@ -1,7 +1,6 @@
 package za.ac.cput.Entity;
 
 import java.time.LocalDate;
-
 /*
 Test.java
 Entity for Test
@@ -9,14 +8,14 @@ Author: Athi Fukama 218328591
 Date :11 June 2021
  */
 public class Test {
-    private String testID;
-    private String lecturerID;
+    private String testId;
+    private String lecturerId;
     private String testInfo;
 
 
     private Test(Test.Builder builder) {
-        this.testID = builder.testID;
-        this.lecturerID = builder.lecturerID;
+        this.testId = builder.testId;
+        this.lecturerId = builder.lecturerId;
         this.testInfo = builder.testInfo;
 
     }
@@ -24,27 +23,38 @@ public class Test {
     @Override
     public String toString() {
         return "Test{" +
-                "testID='" + testID + '\'' +
-                ", lecturerID='" + lecturerID + '\'' +
+                "testID='" + testId + '\'' +
+                ", lecturerId='" + lecturerId + '\'' +
                 ", testInfo='" + testInfo + '\'' +
                 '}';
     }
 
+    public String getTestId() {
+        return testId;
+    }
+
+    public String getLecturerId() {
+        return lecturerId;
+    }
+
+    public String getTestInfo() {
+        return testInfo;
+    }
+
     // Builder Class
     public static class Builder {
-        private String testID;
-        private String lecturerID;
+        private String testId;
+        private String lecturerId;
         private String testInfo;
         private int id;
 
-
-        public Builder setTestID(String testID) {
-            this.testID = testID;
+        public Builder setTestId(String testId) {
+            this.testId = testId;
             return this;
         }
 
-        public Builder setLecturerID(String lecturerID) {
-            this.lecturerID = lecturerID;
+        public Builder setLecturerId(String lecturerId) {
+            this.lecturerId = lecturerId;
             return this;
         }
 
@@ -53,33 +63,19 @@ public class Test {
             return this;
         }
 
-
         public Test build() {
             return new Test(this);
 
         }
 
         public Test.Builder copy(Test test) {
-            this.testID = test.testID;
-            this.lecturerID = test.lecturerID;
+            this.testId = test.testId;
+            this.lecturerId = test.lecturerId;
             this.testInfo = test.testInfo;
 
 
             return this;
         }
-
-        public String getTestID() {
-            return testID;
-        }
-
-        public String getLecturerID() {
-            return lecturerID;
-        }
-
-        public String getTestInfo() {
-            return testInfo;
-        }
-
 
         public Test.Builder id(int id) {
             this.id = id;

@@ -7,14 +7,14 @@ Author: Athi Fukama 218328591
 Date :11 June 2021
  */
 public class Student {
-    private String studentNumber;
+    private String studentId;
     private String firstName;
     private String lastName;
     private String studentEmail;
     private String courseID;
 
     private Student(Builder builder){
-        this.studentNumber = builder.studentNumber;
+        this.studentId = builder.studentId;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.studentEmail = builder.studentEmail;
@@ -25,23 +25,45 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "studentNumber=" + studentNumber +
+                "studentId='" + studentId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", studentEmail='" + studentEmail + '\'' +
                 ", courseID='" + courseID + '\'' +
                 '}';
     }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+
+    public String getCourseID() {
+        return courseID;
+    }
+
+
     // Builder Class
     public static class Builder {
-        private String studentNumber;
+        private String studentId;
         private String firstName;
         private String lastName;
         private String studentEmail;
         private String courseID;
 
-        public Builder setStudentNumber(String studentNumber) {
-            this.studentNumber = studentNumber;
+        public Builder setStudentId(String studentId) {
+            this.studentId = studentId;
             return this;
         }
 
@@ -72,33 +94,12 @@ public class Student {
         }
 
         public Builder copy(Student student){
-            this.studentNumber = student.studentNumber;
+            this.studentId = student.studentId;
             this.firstName = student.firstName;
             this.lastName = student.lastName;
             this.studentEmail = student.studentEmail;
             this.courseID = student.courseID;
-
             return this;
-        }
-
-        public String getStudentNumber() {
-            return studentNumber;
-        }
-
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public String getLastName() {
-            return lastName;
-        }
-
-        public String getStudentEmail() {
-            return studentEmail;
-        }
-
-        public String getCourseID() {
-            return courseID;
         }
 
     }
