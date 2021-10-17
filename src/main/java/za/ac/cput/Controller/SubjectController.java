@@ -1,8 +1,8 @@
 package za.ac.cput.Controller;
 
-import Entity.Subject;
-import Factory.SubjectFactory;
-import Service.SubjectService;
+import za.ac.cput.Entity.Subject;
+import za.ac.cput.Factory.SubjectFactory;
+import za.ac.cput.Service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Entity.Subject;
@@ -12,13 +12,13 @@ import java.util.Set;
 
 public class SubjectController {
 
-    @Autowired
+   @Autowired
     private SubjectService subjectService;
 
     @PostMapping("/create")
 public Subject createSubject(@RequestBody Subject subject)
     {
-        Subject newSubject = SubjectFactory.createSubject(subject.getSubjectID(),subject.getSubjectName(),subject.getSubjectCredit(),subject.getLecturerID());
+        Subject newSubject = SubjectFactory.createSubject(subject.getSubjectName(),subject.getSubjectCredit(),subject.getLecturerID());
         return subjectService.create(newSubject);
     }
 

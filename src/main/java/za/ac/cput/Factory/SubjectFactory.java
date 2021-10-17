@@ -16,7 +16,7 @@ import za.ac.cput.Util.GenericHelper;
 public class SubjectFactory
 {
 
-    public static Subject createSubject(String subjectName,String subjectCredits,String lecturerID )
+    public static Subject createSubject(String subjectName, String subjectCredits, String lecturerID)
     {
       String subjectID = GenericHelper.generateID();
       Subject subject = new Subject.Builder()

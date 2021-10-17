@@ -1,5 +1,10 @@
 package za.ac.cput.Entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
 
 
@@ -60,13 +65,9 @@ public class Subject implements Serializable
 
     //Builder Class
 
-    public static class Builder
-    {
-        private String subjectName,subjectCredit,subjectID,lecturerID;
+    public static class Builder {
+        private String subjectName, subjectCredit, subjectID, lecturerID;
 
-
-
-        public Builder(){}
 
         public Builder setSubjectName(String subjectName) {
             this.subjectName = subjectName;
@@ -88,20 +89,20 @@ public class Subject implements Serializable
             return this;
         }
 
-        public Subject build()
-        {
+        public Subject build() {
             return new Subject(this);
         }
 
+
+        public Builder copy(Subject subject) {
+            this.subjectID = subject.subjectID;
+            this.subjectName = subject.subjectName;
+            this.subjectCredit = subject.subjectCredit;
+            this.lecturerID = subject.lecturerID;
+
+            return this;
+
+
+        }
     }
-    public Builder copy(Subject subject){
-        this.subjectID= subject.subjectID;
-        this.subjectName=subject.subjectName;
-        this.subjectCredit = subject.subjectCredit;
-        this.lecturerID = subject.lecturerID;
-
-        return this;
-
-    }
-
 }

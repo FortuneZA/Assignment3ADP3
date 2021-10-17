@@ -17,11 +17,20 @@ public class Builder {
 
         //student and test method
 
-        Student student = new Student.Builder().setStudentId("21832556457")
+       Student student = new Student.Builder().setStudentId("21832556457")
                 .setFirstName("Athi")
                 .setLastName("Fukama")
                 .setStudentEmail("athif@gmail.com")
                 .setCourseID("362S")
                 .build();
+
+Subject subject = new Subject.Builder()
+        .setSubjectID("A12")
+        .setSubjectName("Architecture Practice")
+        .setSubjectCredit("36")
+        .setLecturerID("KB12")
+        .build();
+
+
     }
 }
