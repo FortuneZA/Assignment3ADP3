@@ -20,30 +20,65 @@ public class SubjectRepository implements ISubjectRepository {
         subjectDB = new HashSet<Subject>();
     }
 
+    public static SubjectRepository getRepository()
+    {
+        if(repository == null)
+            repository = new SubjectRepository();
+        return repository;
+    }
+
 
     @Override
     public Subject create(Subject subject) {
-        return null;
+        boolean success = this.subjectDB.add(subject);
+        if(!success)       //If subject was not successfully added
+            return null;
+
+        return subject;
     }
 
     @Override
-    public Subject read(String s) {
-        return null;
+    public Subject read(String SubjectId) {
+       for(Subject subject : this.subjectDB)
+       {
+           String subjectId;
+           if(subject.getSubjectID().equalsIgnoreCase(SubjectId))
+               return subject;
+       }
+
+       return null;
     }
 
     @Override
     public Subject update(Subject subject) {
-        return null;
+        Subject beforeUpdate = read(subject.getSubjectID());
+
+        if(beforeUpdate!=null)
+        {
+            this.subjectDB.remove(beforeUpdate);
+            this.subjectDB.add(subject);
+            return subject;
+        }
+            return null;
     }
 
     @Override
-    public boolean delete(String s) {
+    public boolean delete(String subjectId) {
+
+        Subject subjectToDelete = read(subjectId);
+
+        if(subjectToDelete !=null)
+        {
+            this.subjectDB.remove(subjectToDelete);
+            return true;
+        }
+
         return false;
     }
 
     @Override
     public Set<Subject> getAll() {
-        return null;
+        return subjectDB;
     }
 
 }

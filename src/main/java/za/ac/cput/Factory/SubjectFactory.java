@@ -1,10 +1,11 @@
 package za.ac.cput.Factory;
 
 import za.ac.cput.Entity.Subject;
+import za.ac.cput.Util.GenericHelper;
 
 /**
  * SubjectFactory.java
- * Entity for SubjectFactory
+ * Class for SubjectFactory
  * Author: Mathew Fortuin (219069514)
  * Date: 10/6/21
  *
@@ -15,25 +16,18 @@ import za.ac.cput.Entity.Subject;
 public class SubjectFactory
 {
 
-    public static Subject build(String subjectName,String subjectCredits,int subjectID,int lecturerID)
+    public static Subject createSubject(String subjectName,String subjectCredits,String lecturerID )
     {
-        //Condition for the object
+      String subjectID = GenericHelper.generateID();
+      Subject subject = new Subject.Builder()
+              .setSubjectID(subjectID)
+              .setSubjectName(subjectName)
+              .setSubjectCredit(subjectCredits)
+              .setLecturerID(lecturerID)
+              .build();
 
-        if(subjectName.isEmpty() || subjectCredits.isBlank())
-        {
-            return new Subject.Builder()
-                    .subjectName("PHP Fundamentals")
-                    .subjectCredit("NQF36")
-                    .build();
-        }
+      return subject;
 
-        else
-        {
-            return new Subject.Builder()
-                    .subjectID("A12")
-                    .lecturerID("krub12")
-                    .build();
-        }
     }
 
 }
